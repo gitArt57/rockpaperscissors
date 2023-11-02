@@ -3,6 +3,7 @@ let personChoice = '';
 let computerScore = 0;
 let personScore = 0;
 let gameCounter = 0;
+let isValidInput = false;
 let gameTools = ['rock', 'paper', 'scissors'];
 
 function getComputerChoice() {
@@ -12,8 +13,15 @@ function getComputerChoice() {
 }
 
 function getUserChoice() {
-    let a = prompt('rock, paper or scisscors', )
-    personChoice = a;
+    while (!isValidInput) {
+        personChoice = prompt('rock paper or scissors');
+        
+        if (personChoice !== null && ['rock', 'paper', 'scissors'].includes(personChoice)) {
+          isValidInput = true;
+        } else {
+          alert('lets try one more time');
+        }
+      }
 }
 
 let oneRounded = () => {
